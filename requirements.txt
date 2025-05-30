@@ -1,0 +1,16 @@
+pandas
+matplotlib
+seaborn
+joblib
+pytest
+numpy
+scikit-learn
+xgboost
+fastapi
+uvicorn
+mlflow
+docker
+prometheus-client
+grafana-api
+requests
+streamlit

@@ -1,0 +1,35 @@
+# Environnements virtuels
+.venv/
+env/
+venv/
+
+# Fichiers Python compilés
+__pycache__/
+*.pyc
+
+# Fichiers de logs
+*.log
+
+# Données brutes et intermédiaires
+data/
+
+# Modèles entraînés
+*.pkl
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Dossiers de tests temporaires
+htmlcov/
+.coverage
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dossiers cachés de VS Code
+.vscode/

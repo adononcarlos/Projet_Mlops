@@ -1,7 +1,10 @@
-import requests
+from fastapi.testclient import TestClient
+from src.api.main import app
+
+client = TestClient(app)
 
 def test_predict_all():
-    url = "http://127.0.0.1:8000/predict/"
+    url = "/predict/"
     data = {
         "Rainfall_mm": 500.0,
         "Temperature_Celsius": 25.0,
@@ -34,7 +37,7 @@ def test_predict_all():
         "predict_irrig": True,
         "predict_fert": True
     }
-    response = requests.post(url, params=params, json=data)
+    response = client.post(url, params=params, json=data)
     assert response.status_code == 200
     result = response.json()
     assert "yield_prediction" in result

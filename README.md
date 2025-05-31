@@ -15,7 +15,16 @@ Ce projet vise à optimiser les rendements agricoles grâce au Machine Learning,
   - Encodage des variables catégoriques
   - Exploration des données dans `notebooks/01_data_exploration.ipynb` (visualisations, corrélations)
 - **Modélisation**  
-  - Entraînement d’un premier modèle Random Forest dans `notebooks/03_model_training.ipynb`
+  - Entraînement de trois modèles Random Forest :
+    - **Modèle de rendement (`random_forest_model.pkl`)**  
+      Prédit le rendement agricole (`Yield_tons_per_hectare`) à partir des caractéristiques d'entrée.  
+      *Emplacement :* `src/models/random_forest_model.pkl`
+    - **Modèle d'irrigation (`random_forest_irrigation.pkl`)**  
+      Prédit si une parcelle doit être irriguée (`Irrigation_Used`).  
+      *Emplacement :* `src/models/random_forest_irrigation.pkl`
+    - **Modèle de fertilisation (`random_forest_fertilizer.pkl`)**  
+      Prédit si une parcelle nécessite de l'engrais (`Fertilizer_Used`).  
+      *Emplacement :* `src/models/random_forest_fertilizer.pkl`
   - Script d’entraînement automatisé dans `src/models/train_model.py`
 - **Gestion des chemins de données**  
   - Fonction centrale `get_data_path` dans `src/config.py` :  
@@ -44,7 +53,10 @@ Ce projet vise à optimiser les rendements agricoles grâce au Machine Learning,
 ├── src/
 │   ├── config.py
 │   └── models/
-│       └── train_model.py
+│       ├── train_model.py
+│       ├── random_forest_model.pkl
+│       ├── random_forest_irrigation.pkl
+│       └── random_forest_fertilizer.pkl
 │   └── api/
 │       └── main.py
 ├── tests/

@@ -64,8 +64,11 @@ for idx, (name, func, params) in enumerate(fields):
     if name in exclude:
         user_inputs[name] = 0.0 if func == st.number_input else 0
     else:
+        # Ajoute un key unique pour chaque widget
+        params_with_key = params.copy()
+        params_with_key["key"] = name
         with cols[idx % 3]:
-            user_inputs[name] = func(**params)
+            user_inputs[name] = func(**params_with_key)
 
 if st.button("Prédire"):
     data = user_inputs.copy()

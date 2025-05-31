@@ -12,6 +12,9 @@ __pycache__/
 
 # Données brutes et intermédiaires
 data/
+# Exclure tous les fichiers sauf sample_data.csv
+!data/processed/sample_data.csv
+
 
 # Modèles entraînés
 *.pkl
@@ -33,3 +36,4 @@ Thumbs.db
 
 # Dossiers cachés de VS Code
 .vscode/
+

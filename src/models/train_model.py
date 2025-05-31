@@ -4,12 +4,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.metrics import mean_squared_error, r2_score, accuracy_score, f1_score
 import joblib
+from src.config import get_data_path  # AJOUTER CETTE LIGNE
 
-def train_model(data_path: str, model_path: str, target_column: str) -> dict:
+def train_model(data_path: str = None, model_path: str = "", target_column: str = "") -> dict:
     """
     Entraîne un modèle Random Forest adapté à la tâche (régression ou classification) selon la colonne cible.
     """
     try:
+        if data_path is None:
+            data_path = get_data_path()  # Utilise le chemin dynamique si non fourni
+
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Le fichier {data_path} n’existe pas.")
 

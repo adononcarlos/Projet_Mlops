@@ -1,9 +1,11 @@
+import sys
 import pandas as pd
 import joblib
 import os
-
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from src.config import get_data_path
 # Charger un échantillon de données prétraitées
-data_path = 'data/processed/cleaned_data.csv'
+data_path = get_data_path()  # MODIFIER CETTE LIGNE
 df = pd.read_csv(data_path)
 
 # Prendre la première ligne comme exemple

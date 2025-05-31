@@ -4,7 +4,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.models.train_model import train_model
 
-data_path = 'data/processed/cleaned_data.csv'
+from src.config import get_data_path  # AJOUTER CETTE LIGNE
+
+# Charger un échantillon de données prétraitées
+data_path = get_data_path()  # MODIFIER CETTE LIGNE
 model_path = 'src/models/random_forest_fertilizer.pkl'
 target_column = 'Fertilizer_Used'
 

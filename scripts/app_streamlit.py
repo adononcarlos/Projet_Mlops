@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 st.set_page_config(page_title="Prédiction Agriculture de Précision", page_icon="🌾")
-st.image("https://cdn.pixabay.com/photo/2017/01/20/00/30/wheat-1995056_1280.jpg", width=120)
+st.image("scripts/OIP.jpeg", width=120)
 st.title("🌾 Prédiction Agriculture de Précision")
 
 st.markdown("""
